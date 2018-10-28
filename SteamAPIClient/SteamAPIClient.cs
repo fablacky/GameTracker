@@ -1,22 +1,31 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GameTracker.Services
 {
-    class SteamAPIClient
+    public class SteamAPIClient
     {
+        public SteamAPIClient()
+        {
+            string jsonContent = File.ReadAllText("../../../SteamAPIClient/APIList.json");
+            List<Interface> webCalls = JsonConvert.DeserializeObject<GameTracker.Services.MainAPIObject>(jsonContent).apilist.interfaces.ToList();
+            foreach (var call in webCalls)
+                Console.WriteLine();
+        }
     }
 
 
-    public class Rootobject
+    public class MainAPIObject
     {
-        public Apilist apilist { get; set; }
+        public ApiList apilist { get; set; }
     }
 
-    public class Apilist
+    public class ApiList
     {
         public Interface[] interfaces { get; set; }
     }
