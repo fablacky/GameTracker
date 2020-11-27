@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GameTracker.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="APIKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">F1B4C7CA29E7DEC50D5F81357DC09CE5</Value>
+    </Setting>
+    <Setting Name="SteamBaseURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://api.steampowered.com</Value>
+    </Setting>
+    <Setting Name="PaoloID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">76561197994867585</Value>
+    </Setting>
+    <Setting Name="FabianoID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">76561197971749060</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

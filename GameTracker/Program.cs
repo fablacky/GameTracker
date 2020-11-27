@@ -1,10 +1,7 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
+using GameTracker.Services;
 
 namespace GameTracker
 {
@@ -12,11 +9,11 @@ namespace GameTracker
     {
         static void Main(string[] args)
         {
-            string SteamKey = "F1B4C7CA29E7DEC50D5F81357DC09CE5";
-            string SteamID = "76561197971749060";
-            string SteamIDPaolo = "76561197994867585";
-            string baseURL = $"http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={SteamKey}&steamids={SteamIDPaolo}";
+            string SteamKey = Properties.Settings.Default.APIKey;
+            string SteamID = Properties.Settings.Default.FabianoID;
+            string baseURL = $"{Properties.Settings.Default.SteamBaseURL}/ISteamUser/GetPlayerSummaries/v0002/?key={SteamKey}&steamids={SteamID}";
             HttpClient client = new HttpClient();
+            SteamAPIClient clizent = new SteamAPIClient();
             var response = client.GetAsync(baseURL).Result;
             string viewResult = response.Content.ReadAsStringAsync().Result;
             Player rObject = JsonConvert.DeserializeObject<Rootobject>(viewResult).response.players[0];

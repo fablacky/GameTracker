@@ -1,3 +1,5 @@
 GameTracker/bin
 GameTracker/obj
 packages
+/SteamAPIClient/bin/Debug
+/SteamAPIClient/obj/Debug
